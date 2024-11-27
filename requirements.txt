@@ -1,0 +1,6 @@
+ipykernel
+jupyter
+python-dotenv
+ghapi
+pandas
+matplotlib
