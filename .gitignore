@@ -9,4 +9,4 @@ __pypackages__/
 
 .env
 
-search_results
+search_results*
