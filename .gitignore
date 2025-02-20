@@ -10,3 +10,4 @@ __pypackages__/
 .env
 
 search_results*
+partial_results/
