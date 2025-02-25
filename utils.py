@@ -14,7 +14,7 @@ def save_results(results):
   if not os.path.isdir(partial_results):
     os.mkdir(partial_results)
 
-  items.to_csv(f"{partial_results}/{search_timestamp}-phase1.csv", index=False)
+  results.to_csv(f"{partial_results}/{search_timestamp}-phase1.csv", index=False)
 
 
 def load_results():
@@ -29,4 +29,10 @@ def load_results():
       df = pd.read_csv(file)
       items = pd.concat([items, df])
 
-  return items.drop_duplicates()
+  return items.drop_duplicates().sort_values('repo_name', ignore_index=True)
+
+
+def load_phase2_results():
+  phase2_files = glob.glob(f"{partial_results}/*phase2.csv")
+  phase2_files.sort()
+  return pd.read_csv(phase2_files[-1])
