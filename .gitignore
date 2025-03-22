@@ -3,11 +3,9 @@ __pycache__/
 *$py.class
 
 .venv
+venv
 
 __pypackages__/
 .ipynb_checkpoints/
 
 .env
-
-search_results*
-partial_results/

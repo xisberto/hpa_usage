@@ -1,6 +1,7 @@
 ipykernel
 jupyter
 python-dotenv
+pyyaml
 ghapi
 pandas
 matplotlib
