@@ -8,7 +8,7 @@ import pandas as pd
 partial_results = 'partial_results'
 
 
-def save_results(results):
+def save_phase1_results(results):
     search_timestamp = datetime.now().replace(microsecond=0).isoformat()
 
     if not os.path.isdir(partial_results):
@@ -18,7 +18,7 @@ def save_results(results):
         f"{partial_results}/{search_timestamp}-phase1.csv", index=False)
 
 
-def load_results():
+def load_phase1_results():
     phase1_files = glob.glob(f"{partial_results}/*-phase1.csv")
 
     items = None
@@ -43,3 +43,8 @@ def load_phase3_results():
     phase3_files = glob.glob(f"{partial_results}/*phase3.csv")
     phase3_files.sort()
     return pd.read_csv(phase3_files[-1])
+
+def load_phase4_results():
+    phase4_files = glob.glob(f"{partial_results}/*phase4.csv")
+    phase4_files.sort()
+    return pd.read_csv(phase4_files[-1])
